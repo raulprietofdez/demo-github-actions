@@ -26,3 +26,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Update repositories
         run: sudo apt-get update
+
+      - name: Crear fichero
+        run: echo "Hola mundo" > hola.txt
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: hola
+          path: hola.txt
